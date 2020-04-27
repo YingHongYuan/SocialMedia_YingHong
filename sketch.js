@@ -57,6 +57,25 @@ function draw(){
 }
 
 function sendMessage(){
-  console.log('send message ~');
-  //createNode(_nodeFolder, _nodeId, _nodeObject)
+
+  if(messageInput.value){
+
+  let timestamp = Date.now();
+
+nodeData = {
+  messageText: messageInput.value,
+  timestamp: timestamp,
 }
+
+  createNode(folderName, timestamp, nodeData);
+  console.log("send message");
+  console.log(nodeData);
+
+  createP(`sent message: ${nodeData.messageText}`);
+
+messageInput.value=''
+
+} else{
+  alert("please type message first")
+}
+  }

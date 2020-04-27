@@ -14,5 +14,18 @@ function gotData(data){
 }
 
 function errData(err){
-  
+  console.log("error! did not receive data");
+  console.log(err);
+}
+
+function createNode(_nodeFolder, _nodeId, _nodeObject){
+  firebase.database().ref(_nodeFolder + '/' + _nodeId).set(_nodeObject);
+}
+
+function updateNode(_nodeFolder, _nodeId, _nodeObject){
+  firebase.database().ref(_nodeFolder + '/' + _nodeId).update(_updateObject);
+}
+
+function deleteNode(_nodeFolder, _nodeId){
+  firebase.database().ref(_nodeFolder + '/' + _nodeId).remove();
 }

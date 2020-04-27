@@ -21,6 +21,7 @@ function errData(err){
 function createNode(_nodeFolder, _nodeId, _nodeObject){
   firebase.database().ref(_nodeFolder + '/' + _nodeId).set(_nodeObject);
 }
+//createNode(folderName,"test",{text:" HHHHHHHH"});
 
 function updateNode(_nodeFolder, _nodeId, _nodeObject){
   firebase.database().ref(_nodeFolder + '/' + _nodeId).update(_updateObject);

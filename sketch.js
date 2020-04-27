@@ -10,6 +10,9 @@ let database; // reference to our firebase database
 let folderName = 'message-in-a-bottle-yyh'; // name of folder you create in db
 let messageInput;
 let sendMessageBtn;
+let receiveMessageBtn;
+let receivedMessage;
+let receiveDiv, sendDiv;
 
 
 function setup(){
@@ -18,9 +21,13 @@ noCanvas();
 //messageInput = select("messageInput");
 messageInput = document.querySelector("#messageInput");
 sendMessageBtn = document.querySelector("#sendMessageBtn");
+receiveMessageBtn = document.querySelector("#receiveMessageBtn");
+receiveMessage = document.querySelector("#receiveMessage");
+receiveDiv = document.querySelector("#receiveDiv");
+sendDiv = document.querySelector("#sendDiv");
 
 sendMessageBtn.addEventListener('click', sendMessage);
-
+receiveMessageBtn.addEventListener('click', receiveMessage);
 
 let config = {
   apiKey: "AIzaSyAulct6uH32I6v9X-SgcEItVOl6C4JTxK0",
@@ -79,3 +86,7 @@ messageInput.value=''
   alert("please type message first")
 }
   }
+
+function receiveMessage(){
+  console.log("received");
+}

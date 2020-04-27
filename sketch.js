@@ -1,7 +1,10 @@
-function setup() {
-  createCanvas(400, 400);
+"use strict";
+
+function setup(){
+noCanvas();
+
 }
 
-function draw() {
-  background(220);
+function draw(){
+
 }

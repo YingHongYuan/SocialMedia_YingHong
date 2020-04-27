@@ -8,9 +8,19 @@ let fbData; // data we pull from firebase
 let fbDataArray; // firebase data valuees converted to an array
 let database; // reference to our firebase database
 let folderName = 'Messages'; // name of folder you create in db
+let messageInput;
+let sendMessageBtn;
+
 
 function setup(){
 noCanvas();
+
+//messageInput = select("messageInput");
+messageInput = document.querySelector("#messageInput");
+sendMessageBtn = document.querySelector("#sendMessageBtn");
+
+sendMessageBtn.addEventListener('click', sendMessage);
+
 
 let config = {
   apiKey: "AIzaSyAulct6uH32I6v9X-SgcEItVOl6C4JTxK0",
@@ -44,4 +54,8 @@ ref.on('value',gotData, errData);
 
 function draw(){
 
+}
+
+function sendMessage(){
+  console.log('send message ~');
 }

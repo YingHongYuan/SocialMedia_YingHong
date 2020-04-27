@@ -7,7 +7,7 @@ let nodeData;//object we will push to firebase
 let fbData; // data we pull from firebase
 let fbDataArray; // firebase data valuees converted to an array
 let database; // reference to our firebase database
-let folderName = 'Messages'; // name of folder you create in db
+let folderName = 'message-in-a-bottle-yyh'; // name of folder you create in db
 let messageInput;
 let sendMessageBtn;
 
@@ -58,4 +58,5 @@ function draw(){
 
 function sendMessage(){
   console.log('send message ~');
+  //createNode(_nodeFolder, _nodeId, _nodeObject)
 }

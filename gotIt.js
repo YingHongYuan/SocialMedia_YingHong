@@ -8,6 +8,9 @@ function gotData(data){
     console.log(fbData);
 
     fbDataArray = Object.values(fbData);
+
+    console.log(fbDataArray);
+
   }else{
     console.log('nothing in this folder yet');
   }
@@ -18,15 +21,15 @@ function errData(err){
   console.log(err);
 }
 
-function createNode(_nodeFolder, _nodeId, _nodeObject){
-  firebase.database().ref(_nodeFolder + '/' + _nodeId).set(_nodeObject);
+function createNode(_nodeFolder, _nodeID, _nodeObject){
+  firebase.database().ref(_nodeFolder + '/' + _nodeID).set(_nodeObject);
 }
 //createNode(folderName,"test",{text:" HHHHHHHH"});
 
-function updateNode(_nodeFolder, _nodeId, _nodeObject){
-  firebase.database().ref(_nodeFolder + '/' + _nodeId).update(_updateObject);
+function updateNode(_nodeFolder, _nodeID, _nodeObject){
+  firebase.database().ref(_nodeFolder + '/' + _nodeID).update(_updateObject);
 }
 
-function deleteNode(_nodeFolder, _nodeId){
-  firebase.database().ref(_nodeFolder + '/' + _nodeId).remove();
+function deleteNode(_nodeFolder, _nodeID){
+  firebase.database().ref(_nodeFolder + '/' + _nodeID).remove();
 }

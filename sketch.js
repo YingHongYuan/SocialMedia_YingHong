@@ -63,6 +63,7 @@ function draw(){
 
 }
 
+//
 function sendMessage(){
 
   if(messageInput.value){
@@ -72,6 +73,7 @@ function sendMessage(){
 nodeData = {
   messageText: messageInput.value,
   timestamp: timestamp,
+  received: false,
 }
 
   createNode(folderName, timestamp, nodeData);
@@ -87,6 +89,26 @@ messageInput.value=''
 }
   }
 
+
+
+//
 function receiveMessage(){
-  console.log("received");
+
+  for (let i = 0; i < fbDataArray.length; i++){
+    if (fbDataArray[i].received === false){
+  // console.log("received message:");
+  // console.log(fbDataArray[i].messageText);
+
+receivedMessage.innerHTML = fbDataArray[i].messageText;
+
+ updateNode(folderName, fbDataArray[i].timestamp, {recerved:true});
+
+break;}
+
+
+ else{
+   receivedMessage.innerHTML = "no more message out at sea";
+  console.log("no more message out at sea");
+  }
+  }
 }

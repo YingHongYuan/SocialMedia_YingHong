@@ -27,7 +27,7 @@ receiveDiv = document.querySelector("#receiveDiv");
 sendDiv = document.querySelector("#sendDiv");
 
 sendMessageBtn.addEventListener('click', sendMessage);
-receiveMessageBtn.addEventListener('click', receiveMessage);
+receiveMessageBtn.addEventListener('click', receivedMessage);
 
 let config = {
   apiKey: "AIzaSyAulct6uH32I6v9X-SgcEItVOl6C4JTxK0",

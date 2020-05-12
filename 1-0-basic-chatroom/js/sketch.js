@@ -73,12 +73,13 @@ function sendMessage(){
 }
 
 function displayPastChats(){
+  let length = fbDataArray.length;
 
-for(let i=0; i < fbDataArray.length; i++){
+for(let i=0; i < length; i++){
     let p = createP(fbDataArray[i].message);
     p.position(random(windowWidth),random(windowHeight));
     p.style('background-color',`hsl(${(i*5)%300},80%,50%)`);
-    let opacity = i / fbDataArray.length;
+    let opacity = map(i/length,0,1,0,.9);
     p.style('opacity',opacity);
   }
 }

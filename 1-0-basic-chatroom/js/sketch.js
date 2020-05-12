@@ -76,6 +76,10 @@ function displayPastChats(){
 
 for(let i=0; i < fbDataArray.length; i++){
     let p = createP(fbDataArray[i].message);
+    p.position(random(windowWidth),random(windowHeight));
+    p.style('background-color',`hsl(${(i*5)%300},80%,50%)`);
+    let opacity = i / length;
+    p.style('opacity',opacity);
   }
 }
 function displayLastChat(){

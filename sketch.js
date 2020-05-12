@@ -11,6 +11,7 @@ let folderName = 'message-in-a-bottle-yyh'; // name of folder you create in db
 let messageInput;
 let sendMessageBtn;
 let receiveMessageBtn;
+let sendAgainBtn;
 let receivedMessage;
 let receiveDiv, sendDiv;
 
@@ -23,11 +24,13 @@ messageInput = document.querySelector("#messageInput");
 sendMessageBtn = document.querySelector("#sendMessageBtn");
 receiveMessageBtn = document.querySelector("#receiveMessageBtn");
 receiveMessage = document.querySelector("#receiveMessage");
+sendAgainBtn = document.querySelector("#sendAgainBtn");
 receiveDiv = document.querySelector("#receiveDiv");
 sendDiv = document.querySelector("#sendDiv");
 
 sendMessageBtn.addEventListener('click', sendMessage);
 receiveMessageBtn.addEventListener('click', receivedMessage);
+sendAgainBtn.addEventListener('click', sendAgain);
 
 let config = {
   apiKey: "AIzaSyAulct6uH32I6v9X-SgcEItVOl6C4JTxK0",
@@ -84,8 +87,8 @@ nodeData = {
 
 messageInput.value=''
 
-sendDiv.display = 'none';
-receiveDiv.display = 'block';
+sendDiv.style.display = 'none';
+receiveDiv.style.display = 'block';
 
 
 } else{
@@ -98,7 +101,12 @@ receiveDiv.display = 'block';
 //
 function receiveMessage(){
 
+// shuffle Array first
+shuffleArray(fbDataArray);
+
+
   for (let i = 0; i < fbDataArray.length; i++){
+
     if (fbDataArray[i].received === false){
   // console.log("received message:");
   // console.log(fbDataArray[i].messageText);
@@ -107,12 +115,37 @@ receivedMessage.innerHTML = fbDataArray[i].messageText;
 
  updateNode(folderName, fbDataArray[i].timestamp, {recerved:true});
 
-break;}
+ receiveMessageBtn.style.display = 'none';
+ sendAgainBtn.style.display = 'block';
+
+break;
+}
 
 
  else{
    receivedMessage.innerHTML = "no more message out at sea";
   //console.log("no more message out at sea");
   }
+  }
+}
+
+function sendAgain(){
+//reset receive div
+  // receivedMessage.innerHTML="";
+  // receiveMessageBtn.style.display = 'block';
+  // sendAgainBtn.style.display = 'none';
+  //
+  //return to beginning
+  receiveDiv.style.display = 'none';
+  sendDiv.style.display = 'block';
+}
+
+function shuffleArray(_array){
+
+  for (let i=_array.length - 1; i>0; i--){
+
+    let randomIndex = Math.floor(Math.random()*(i+1));
+
+    [_array[i],_array[randomIndex]] = [_array[randomIndex],_array[i]];
   }
 }

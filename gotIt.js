@@ -41,7 +41,7 @@ _array.forEach(function(item){
   let timestamp = Date.now();
 
 nodeData = {
-  messageText: messageInput.value,
+  messageText: item,
   timestamp: timestamp,
   received: false,
 }

@@ -33,3 +33,19 @@ function updateNode(_nodeFolder, _nodeID, _nodeObject){
 function deleteNode(_nodeFolder, _nodeID){
   firebase.database().ref(_nodeFolder + '/' + _nodeID).remove();
 }
+
+function seeDatabase(_array){
+
+_array.forEach(function(item){
+
+  let timestamp = Date.now();
+
+nodeData = {
+  messageText: messageInput.value,
+  timestamp: timestamp,
+  received: false,
+}
+
+  createNode(folderName, timestamp, nodeData);
+
+})

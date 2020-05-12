@@ -7,7 +7,7 @@ let nodeData;//object we will push to firebase
 let fbData; // data we pull from firebase
 let fbDataArray; // firebase data valuees converted to an array
 let database; // reference to our firebase database
-let folderName = 'message-in-a-bottle-yyh'; // name of folder you create in db
+let folderName = 'chatMessage'; // name of folder you create in db
 let messageInput;
 let sendMessageBtn;
 let receiveMessageBtn;
@@ -34,12 +34,12 @@ sendAgainBtn.addEventListener('click', sendAgain);
 
 let config = {
   apiKey: "AIzaSyAulct6uH32I6v9X-SgcEItVOl6C4JTxK0",
-      authDomain: "message-in-a-bottle-yyh.firebaseapp.com",
-      databaseURL: "https://message-in-a-bottle-yyh.firebaseio.com",
-      projectId: "message-in-a-bottle-yyh",
-      storageBucket: "message-in-a-bottle-yyh.appspot.com",
-      messagingSenderId: "498452120131",
-      appId: "1:498452120131:web:483b2c55a78966641a8af6"
+  authDomain: "message-in-a-bottle-yyh.firebaseapp.com",
+  databaseURL: "https://message-in-a-bottle-yyh.firebaseio.com",
+  projectId: "message-in-a-bottle-yyh",
+  storageBucket: "message-in-a-bottle-yyh.appspot.com",
+  messagingSenderId: "498452120131",
+  appId: "1:498452120131:web:483b2c55a78966641a8af6"
 };
 
 firebase.initializeApp(config);
@@ -65,6 +65,7 @@ ref.on('value',gotData, errData);
 function draw(){
 
 }
+
 
 //
 function sendMessage(){

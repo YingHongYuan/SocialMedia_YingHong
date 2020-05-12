@@ -14,3 +14,9 @@ body {
 canvas {
   display: block;
 }
+
+.hidden{
+  display: none;
+  /* visibility: hidden;
+  visibility: visible; */
+}

@@ -108,7 +108,7 @@ break;}
 
  else{
    receivedMessage.innerHTML = "no more message out at sea";
-  console.log("no more message out at sea");
+  //console.log("no more message out at sea");
   }
   }
 }

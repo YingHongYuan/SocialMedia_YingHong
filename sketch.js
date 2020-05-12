@@ -80,9 +80,13 @@ nodeData = {
   console.log("send message");
   console.log(nodeData);
 
-  createP(`sent message: ${nodeData.messageText}`);
+  //createP(`sent message: ${nodeData.messageText}`);
 
 messageInput.value=''
+
+sendDiv.display = 'none';
+receiveDiv.display = 'block';
+
 
 } else{
   alert("please type message first")
